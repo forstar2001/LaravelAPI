@@ -1,0 +1,3226 @@
+[
+  {
+    "type": "post",
+    "url": "/addCategory",
+    "title": "Add Category",
+    "version": "0.0.1",
+    "name": "AddCategory",
+    "group": "Category",
+    "parameter": {
+      "fields": {
+        "Parameter": [
+          {
+            "group": "Parameter",
+            "type": "<p>String</p> ",
+            "optional": false,
+            "field": "token",
+            "description": "<p>Users ACCESS TOKEN.</p> "
+          },
+          {
+            "group": "Parameter",
+            "type": "<p>String</p> ",
+            "optional": false,
+            "field": "name",
+            "description": "<p>Category name.</p> "
+          },
+          {
+            "group": "Parameter",
+            "type": "<p>String</p> ",
+            "optional": false,
+            "field": "api_key",
+            "description": "<p>API key.</p> "
+          }
+        ]
+      }
+    },
+    "success": {
+      "fields": {
+        "Success 200": [
+          {
+            "group": "Success 200",
+            "type": "<p>Number</p> ",
+            "optional": false,
+            "field": "id",
+            "description": "<p>Category ID.</p> "
+          },
+          {
+            "group": "Success 200",
+            "type": "<p>String</p> ",
+            "optional": false,
+            "field": "name",
+            "description": "<p>Name of Category.</p> "
+          },
+          {
+            "group": "Success 200",
+            "type": "<p>Number</p> ",
+            "optional": false,
+            "field": "editable",
+            "description": "<p>Whether the editable or not.</p> "
+          },
+          {
+            "group": "Success 200",
+            "type": "<p>Number</p> ",
+            "optional": false,
+            "field": "order",
+            "description": "<p>Category position.</p> "
+          },
+          {
+            "group": "Success 200",
+            "type": "<p>Number</p> ",
+            "optional": false,
+            "field": "already_edited",
+            "description": "<p>Whether the category already edited.</p> "
+          }
+        ]
+      },
+      "examples": [
+        {
+          "title": "Success-Response:",
+          "content": "HTTP/1.1 200 OK\n{\n\"status\":\"SUCCESS\",\n\"result\":\n  {\n      \"id\": 1\n      \"name\": \"Work\",\n      \"editable\": 1,\n      \"order\": 1,\n      \"already_edited\": 1\n   }\n \"error\":''\n}",
+          "type": "json"
+        }
+      ]
+    },
+    "error": {
+      "fields": {
+        "Error 4xx": [
+          {
+            "group": "Error 4xx",
+            "optional": false,
+            "field": "InvalidAccessToken",
+            "description": "<p>The access token was invalid.</p> "
+          },
+          {
+            "group": "Error 4xx",
+            "optional": false,
+            "field": "InvalidAPIKey",
+            "description": "<p>The app api key was invalid.</p> "
+          }
+        ]
+      },
+      "examples": [
+        {
+          "title": "Error-Response:",
+          "content": "HTTP/1.1 401 Unauthorized\n{\n\"status\":\"ERROR\",\n\"result\":\n {\n },\n\"error\":'InvalidAccessToken'\n}",
+          "type": "json"
+        }
+      ]
+    },
+    "filename": "resources/API/api.js",
+    "groupTitle": "Category"
+  },
+  {
+    "type": "post",
+    "url": "/arrangeCategory",
+    "title": "Re-arrange Category",
+    "version": "0.0.1",
+    "name": "ArrangeCategory",
+    "group": "Category",
+    "parameter": {
+      "fields": {
+        "Parameter": [
+          {
+            "group": "Parameter",
+            "type": "<p>String</p> ",
+            "optional": false,
+            "field": "token",
+            "description": "<p>Users ACCESS TOKEN.</p> "
+          },
+          {
+            "group": "Parameter",
+            "type": "<p>Array</p> ",
+            "optional": false,
+            "field": "category",
+            "description": "<p>Category array with id and order keys.</p> "
+          },
+          {
+            "group": "Parameter",
+            "type": "<p>String</p> ",
+            "optional": false,
+            "field": "api_key",
+            "description": "<p>API key.</p> "
+          }
+        ]
+      }
+    },
+    "success": {
+      "examples": [
+        {
+          "title": "Success-Response:",
+          "content": "HTTP/1.1 200 OK\n{\n\"status\":\"SUCCESS\",\n\"result\":''\n\"error\":''\n}",
+          "type": "json"
+        }
+      ]
+    },
+    "error": {
+      "fields": {
+        "Error 4xx": [
+          {
+            "group": "Error 4xx",
+            "optional": false,
+            "field": "InvalidAccessToken",
+            "description": "<p>The access token was invalid.</p> "
+          },
+          {
+            "group": "Error 4xx",
+            "optional": false,
+            "field": "InvalidAPIKey",
+            "description": "<p>The app api key was invalid.</p> "
+          }
+        ]
+      },
+      "examples": [
+        {
+          "title": "Error-Response:",
+          "content": "HTTP/1.1 401 Unauthorized\n{\n\"status\":\"ERROR\",\n\"result\":\n {\n },\n\"error\":'InvalidAccessToken'\n}",
+          "type": "json"
+        }
+      ]
+    },
+    "filename": "resources/API/api.js",
+    "groupTitle": "Category"
+  },
+  {
+    "type": "post",
+    "url": "/deleteCategory",
+    "title": "Delete Category",
+    "version": "0.0.1",
+    "name": "DeleteCategory",
+    "group": "Category",
+    "parameter": {
+      "fields": {
+        "Parameter": [
+          {
+            "group": "Parameter",
+            "type": "<p>String</p> ",
+            "optional": false,
+            "field": "token",
+            "description": "<p>Users ACCESS TOKEN.</p> "
+          },
+          {
+            "group": "Parameter",
+            "type": "<p>Number</p> ",
+            "optional": false,
+            "field": "category_id",
+            "description": "<p>Category ID.</p> "
+          },
+          {
+            "group": "Parameter",
+            "type": "<p>String</p> ",
+            "optional": false,
+            "field": "api_key",
+            "description": "<p>API key.</p> "
+          }
+        ]
+      }
+    },
+    "success": {
+      "examples": [
+        {
+          "title": "Success-Response:",
+          "content": "HTTP/1.1 200 OK\n{\n\"status\":\"SUCCESS\",\n\"result\":''\n\"error\":''\n}",
+          "type": "json"
+        }
+      ]
+    },
+    "error": {
+      "fields": {
+        "Error 4xx": [
+          {
+            "group": "Error 4xx",
+            "optional": false,
+            "field": "InvalidAccessToken",
+            "description": "<p>The access token was invalid.</p> "
+          },
+          {
+            "group": "Error 4xx",
+            "optional": false,
+            "field": "InvalidAPIKey",
+            "description": "<p>The app api key was invalid.</p> "
+          }
+        ]
+      },
+      "examples": [
+        {
+          "title": "Error-Response:",
+          "content": "HTTP/1.1 401 Unauthorized\n{\n\"status\":\"ERROR\",\n\"result\":\n {\n },\n\"error\":'InvalidAccessToken'\n}",
+          "type": "json"
+        }
+      ]
+    },
+    "filename": "resources/API/api.js",
+    "groupTitle": "Category"
+  },
+  {
+    "type": "post",
+    "url": "/getCategory",
+    "title": "Category List",
+    "version": "0.0.1",
+    "name": "GetCategory",
+    "group": "Category",
+    "parameter": {
+      "fields": {
+        "Parameter": [
+          {
+            "group": "Parameter",
+            "type": "<p>String</p> ",
+            "optional": false,
+            "field": "token",
+            "description": "<p>Users ACCESS TOKEN.</p> "
+          },
+          {
+            "group": "Parameter",
+            "type": "<p>String</p> ",
+            "optional": false,
+            "field": "api_key",
+            "description": "<p>API key.</p> "
+          }
+        ]
+      }
+    },
+    "success": {
+      "fields": {
+        "Success 200": [
+          {
+            "group": "Success 200",
+            "type": "<p>Number</p> ",
+            "optional": false,
+            "field": "id",
+            "description": "<p>Category ID.</p> "
+          },
+          {
+            "group": "Success 200",
+            "type": "<p>String</p> ",
+            "optional": false,
+            "field": "name",
+            "description": "<p>Name of Category.</p> "
+          },
+          {
+            "group": "Success 200",
+            "type": "<p>Number</p> ",
+            "optional": false,
+            "field": "editable",
+            "description": "<p>Whether the editable or not.</p> "
+          },
+          {
+            "group": "Success 200",
+            "type": "<p>Number</p> ",
+            "optional": false,
+            "field": "order",
+            "description": "<p>Category position.</p> "
+          },
+          {
+            "group": "Success 200",
+            "type": "<p>Number</p> ",
+            "optional": false,
+            "field": "already_edited",
+            "description": "<p>Whether the category already edited.</p> "
+          }
+        ]
+      },
+      "examples": [
+        {
+          "title": "Success-Response:",
+          "content": "HTTP/1.1 200 OK\n{\n\"status\":\"SUCCESS\",\n\"result\":\n  [{\n      \"id\": 1\n      \"name\": \"Work\",\n      \"editable\": 1,\n      \"order\": 1,\n      \"already_edited\": 0\n   }]\n \"error\":''\n}",
+          "type": "json"
+        }
+      ]
+    },
+    "error": {
+      "fields": {
+        "Error 4xx": [
+          {
+            "group": "Error 4xx",
+            "optional": false,
+            "field": "InvalidAccessToken",
+            "description": "<p>The access token was invalid.</p> "
+          },
+          {
+            "group": "Error 4xx",
+            "optional": false,
+            "field": "InvalidAPIKey",
+            "description": "<p>The app api key was invalid.</p> "
+          }
+        ]
+      },
+      "examples": [
+        {
+          "title": "Error-Response:",
+          "content": "HTTP/1.1 401 Unauthorized\n{\n\"status\":\"ERROR\",\n\"result\":\n {\n },\n\"error\":'InvalidAccessToken'\n}",
+          "type": "json"
+        }
+      ]
+    },
+    "filename": "resources/API/api.js",
+    "groupTitle": "Category"
+  },
+  {
+    "type": "post",
+    "url": "/renameCategory",
+    "title": "Rename Category",
+    "version": "0.0.1",
+    "name": "RenameCategory",
+    "group": "Category",
+    "parameter": {
+      "fields": {
+        "Parameter": [
+          {
+            "group": "Parameter",
+            "type": "<p>String</p> ",
+            "optional": false,
+            "field": "token",
+            "description": "<p>Users ACCESS TOKEN.</p> "
+          },
+          {
+            "group": "Parameter",
+            "type": "<p>Number</p> ",
+            "optional": false,
+            "field": "category_id",
+            "description": "<p>Users Category unique ID.</p> "
+          },
+          {
+            "group": "Parameter",
+            "type": "<p>String</p> ",
+            "optional": false,
+            "field": "name",
+            "description": "<p>Category new name.</p> "
+          },
+          {
+            "group": "Parameter",
+            "type": "<p>String</p> ",
+            "optional": false,
+            "field": "api_key",
+            "description": "<p>API key.</p> "
+          }
+        ]
+      }
+    },
+    "success": {
+      "examples": [
+        {
+          "title": "Success-Response:",
+          "content": "HTTP/1.1 200 OK\n{\n\"status\":\"SUCCESS\",\n\"result\":''\n \"error\":''\n}",
+          "type": "json"
+        }
+      ]
+    },
+    "error": {
+      "fields": {
+        "Error 4xx": [
+          {
+            "group": "Error 4xx",
+            "optional": false,
+            "field": "InvalidAccessToken",
+            "description": "<p>The access token was invalid.</p> "
+          },
+          {
+            "group": "Error 4xx",
+            "optional": false,
+            "field": "InvalidAPIKey",
+            "description": "<p>The app api key was invalid.</p> "
+          }
+        ]
+      },
+      "examples": [
+        {
+          "title": "Error-Response:",
+          "content": "HTTP/1.1 401 Unauthorized\n{\n\"status\":\"ERROR\",\n\"result\":\n {\n },\n\"error\":'InvalidAccessToken'\n}",
+          "type": "json"
+        }
+      ]
+    },
+    "filename": "resources/API/api.js",
+    "groupTitle": "Category"
+  },
+  {
+    "type": "post",
+    "url": "/addComment/",
+    "title": "Comment On Post",
+    "version": "0.0.1",
+    "name": "AddComment",
+    "group": "Comment",
+    "parameter": {
+      "fields": {
+        "Parameter": [
+          {
+            "group": "Parameter",
+            "type": "<p>String</p> ",
+            "optional": false,
+            "field": "post_id",
+            "description": "<p>Post unique ID.</p> "
+          },
+          {
+            "group": "Parameter",
+            "type": "<p>String</p> ",
+            "optional": false,
+            "field": "comment",
+            "description": "<p>User comment on post .</p> "
+          },
+          {
+            "group": "Parameter",
+            "type": "<p>String</p> ",
+            "optional": false,
+            "field": "reply_comment_id",
+            "description": "<p>ID of comment.</p> "
+          },
+          {
+            "group": "Parameter",
+            "type": "<p>String</p> ",
+            "optional": false,
+            "field": "photo",
+            "description": "<p>Comment photo.</p> "
+          },
+          {
+            "group": "Parameter",
+            "type": "<p>String</p> ",
+            "optional": false,
+            "field": "video",
+            "description": "<p>Comment video.</p> "
+          },
+          {
+            "group": "Parameter",
+            "type": "<p>String</p> ",
+            "optional": false,
+            "field": "preview",
+            "description": "<p>Comment video preview.</p> "
+          },
+          {
+            "group": "Parameter",
+            "type": "<p>String</p> ",
+            "optional": false,
+            "field": "type",
+            "description": "<p>Comment type.</p> "
+          },
+          {
+            "group": "Parameter",
+            "type": "<p>String</p> ",
+            "optional": false,
+            "field": "api_key",
+            "description": "<p>API key.</p> "
+          },
+          {
+            "group": "Parameter",
+            "type": "<p>String</p> ",
+            "optional": false,
+            "field": "token",
+            "description": "<p>Users ACCESS TOKEN.</p> "
+          }
+        ]
+      }
+    },
+    "success": {
+      "fields": {
+        "Success 200": [
+          {
+            "group": "Success 200",
+            "type": "<p>Number</p> ",
+            "optional": false,
+            "field": "id",
+            "description": "<p>Unique ID of the Comment.</p> "
+          },
+          {
+            "group": "Success 200",
+            "type": "<p>String</p> ",
+            "optional": false,
+            "field": "comment",
+            "description": "<p>Comment on post.</p> "
+          },
+          {
+            "group": "Success 200",
+            "type": "<p>String</p> ",
+            "optional": false,
+            "field": "date",
+            "description": "<p>Comment posted date.</p> "
+          }
+        ]
+      },
+      "examples": [
+        {
+          "title": "Success-Response:",
+          "content": "HTTP/1.1 200 OK\n{\n\"status\":\"SUCCESS\",\n\"result\":\n {\n     \"id\": \"1\",\n     \"comment\": \"Lorem ipsum dolor sit amet, consectetur adipiscing elit\",\n     \"created_at\": \"2016-02-24 10:00\",\n     \"photo\": \"http:\\/\\/www.cliquenet.com\\/photo.png\",\n     \"video\": \"http:\\/\\/www.cliquenet.com\\/video.mp4\",\n     \"preview\": \"http:\\/\\/www.cliquenet.com\\/video.png\",\n     \"type\": \"VIDEO\"\n },\n \"error\":''\n}",
+          "type": "json"
+        }
+      ]
+    },
+    "error": {
+      "fields": {
+        "Error 4xx": [
+          {
+            "group": "Error 4xx",
+            "optional": false,
+            "field": "InvalidAccessToken",
+            "description": "<p>The access token was invalid.</p> "
+          },
+          {
+            "group": "Error 4xx",
+            "optional": false,
+            "field": "InvalidAPIKey",
+            "description": "<p>The app api key was invalid.</p> "
+          }
+        ]
+      },
+      "examples": [
+        {
+          "title": "Error-Response:",
+          "content": "HTTP/1.1 401 Unauthorized\n{\n\"status\":\"ERROR\",\n\"result\":\n {\n },\n\"error\":'InvalidAccessToken'\n}",
+          "type": "json"
+        }
+      ]
+    },
+    "filename": "resources/API/api.js",
+    "groupTitle": "Comment"
+  },
+  {
+    "type": "post",
+    "url": "/getComment/",
+    "title": "Get Comment",
+    "version": "0.0.1",
+    "name": "GetComment",
+    "group": "Comment",
+    "parameter": {
+      "fields": {
+        "Parameter": [
+          {
+            "group": "Parameter",
+            "type": "<p>String</p> ",
+            "optional": false,
+            "field": "api_key",
+            "description": "<p>API key.</p> "
+          },
+          {
+            "group": "Parameter",
+            "type": "<p>String</p> ",
+            "optional": false,
+            "field": "token",
+            "description": "<p>Users ACCESS TOKEN.</p> "
+          }
+        ]
+      }
+    },
+    "success": {
+      "fields": {
+        "Success 200": [
+          {
+            "group": "Success 200",
+            "type": "<p>Number</p> ",
+            "optional": false,
+            "field": "id",
+            "description": "<p>Unique ID of the Comment.</p> "
+          },
+          {
+            "group": "Success 200",
+            "type": "<p>String</p> ",
+            "optional": false,
+            "field": "comment",
+            "description": "<p>Comment on post.</p> "
+          },
+          {
+            "group": "Success 200",
+            "type": "<p>String</p> ",
+            "optional": false,
+            "field": "date",
+            "description": "<p>Comment posted date.</p> "
+          },
+          {
+            "group": "Success 200",
+            "type": "<p>Number</p> ",
+            "optional": false,
+            "field": "profile_id",
+            "description": "<p>Unique ID of the User.</p> "
+          },
+          {
+            "group": "Success 200",
+            "type": "<p>String</p> ",
+            "optional": false,
+            "field": "username",
+            "description": "<p>Username of the User.</p> "
+          },
+          {
+            "group": "Success 200",
+            "type": "<p>String</p> ",
+            "optional": false,
+            "field": "picture",
+            "description": "<p>Picture of the User.</p> "
+          }
+        ]
+      },
+      "examples": [
+        {
+          "title": "Success-Response:",
+          "content": "HTTP/1.1 200 OK\n{\n\"status\":\"SUCCESS\",\n\"result\":\n {\n     \"id\": \"1\",\n     \"comment\": \"Lorem ipsum dolor sit amet, consectetur adipiscing elit\",\n     \"created_at\": \"2016-02-24 10:00\",\n     \"profile_id\": 1,\n     \"username\": \"john\",\n     \"picture\": \"http:\\/\\/www.cliquenet.com\\/profile.jpg\",\n     \"photo\": \"http:\\/\\/www.cliquenet.com\\/photo.png\",\n     \"video\": \"http:\\/\\/www.cliquenet.com\\/video.mp4\",\n     \"preview\": \"http:\\/\\/www.cliquenet.com\\/video.png\",\n     \"type\": \"VIDEO\"\n },\n \"error\":''\n}",
+          "type": "json"
+        }
+      ]
+    },
+    "error": {
+      "fields": {
+        "Error 4xx": [
+          {
+            "group": "Error 4xx",
+            "optional": false,
+            "field": "InvalidAccessToken",
+            "description": "<p>The access token was invalid.</p> "
+          },
+          {
+            "group": "Error 4xx",
+            "optional": false,
+            "field": "InvalidAPIKey",
+            "description": "<p>The app api key was invalid.</p> "
+          }
+        ]
+      },
+      "examples": [
+        {
+          "title": "Error-Response:",
+          "content": "HTTP/1.1 401 Unauthorized\n{\n\"status\":\"ERROR\",\n\"result\":\n {\n },\n\"error\":'InvalidAccessToken'\n}",
+          "type": "json"
+        }
+      ]
+    },
+    "filename": "resources/API/api.js",
+    "groupTitle": "Comment"
+  },
+  {
+    "type": "post",
+    "url": "/getCommentByPost/",
+    "title": "Get Comment By Post",
+    "version": "0.0.1",
+    "name": "GetCommentByPost",
+    "group": "Comment",
+    "parameter": {
+      "fields": {
+        "Parameter": [
+          {
+            "group": "Parameter",
+            "type": "<p>String</p> ",
+            "optional": false,
+            "field": "post_id",
+            "description": "<p>Post unique ID.</p> "
+          },
+          {
+            "group": "Parameter",
+            "type": "<p>String</p> ",
+            "optional": false,
+            "field": "api_key",
+            "description": "<p>API key.</p> "
+          },
+          {
+            "group": "Parameter",
+            "type": "<p>String</p> ",
+            "optional": false,
+            "field": "token",
+            "description": "<p>Users ACCESS TOKEN.</p> "
+          }
+        ]
+      }
+    },
+    "success": {
+      "fields": {
+        "Success 200": [
+          {
+            "group": "Success 200",
+            "type": "<p>Number</p> ",
+            "optional": false,
+            "field": "id",
+            "description": "<p>Unique ID of the Comment.</p> "
+          },
+          {
+            "group": "Success 200",
+            "type": "<p>String</p> ",
+            "optional": false,
+            "field": "comment",
+            "description": "<p>Comment on post.</p> "
+          },
+          {
+            "group": "Success 200",
+            "type": "<p>String</p> ",
+            "optional": false,
+            "field": "date",
+            "description": "<p>Comment posted date.</p> "
+          },
+          {
+            "group": "Success 200",
+            "type": "<p>Number</p> ",
+            "optional": false,
+            "field": "profile_id",
+            "description": "<p>Unique ID of the User.</p> "
+          },
+          {
+            "group": "Success 200",
+            "type": "<p>String</p> ",
+            "optional": false,
+            "field": "username",
+            "description": "<p>Username of the User.</p> "
+          },
+          {
+            "group": "Success 200",
+            "type": "<p>String</p> ",
+            "optional": false,
+            "field": "picture",
+            "description": "<p>Picture of the User.</p> "
+          }
+        ]
+      },
+      "examples": [
+        {
+          "title": "Success-Response:",
+          "content": "HTTP/1.1 200 OK\n{\n\"status\":\"SUCCESS\",\n\"result\":\n {\n     \"comment\" :[{\n     \"id\": \"1\",\n     \"comment\": \"Lorem ipsum dolor sit amet, consectetur adipiscing elit\",\n     \"created_at\": \"2016-02-24 10:00\",\n     \"profile_id\": 1,\n     \"username\": \"john\",\n     \"picture\": \"http:\\/\\/www.cliquenet.com\\/profile.jpg\",\n     \"photo\": \"http:\\/\\/www.cliquenet.com\\/photo.png\",\n     \"video\": \"http:\\/\\/www.cliquenet.com\\/video.mp4\",\n     \"preview\": \"http:\\/\\/www.cliquenet.com\\/video.png\",\n     \"type\": \"VIDEO\"\n     }],\n     \"profile_name\" : \"John\",\n     \"post\": {\n          \"post_id\": 1,\n          \"description\": \"Lorem ipsum dolor sit amet, consectetur adipiscing elit.\",\n          \"profile_id\": 2\n          \"profile_name\": \"John\",\n          \"date\": \"2016-02-24 10:30:00\",\n          \"media\": [\n             {\n                 \"id\": 1,\n                 \"photo\": \"http:\\/\\/www.cliquenet.com\\/photo.jpg\",\n                 \"video\": \"\",\n                 \"preview\": \"\",\n                 \"text\": \"\",\n                 \"link\": \"\"\n                 \"type\": \"PHOTO\",\n                 \"order\": 1\n             }\n          ]\n     }\n },\n \"error\":''\n}",
+          "type": "json"
+        }
+      ]
+    },
+    "error": {
+      "fields": {
+        "Error 4xx": [
+          {
+            "group": "Error 4xx",
+            "optional": false,
+            "field": "InvalidAccessToken",
+            "description": "<p>The access token was invalid.</p> "
+          },
+          {
+            "group": "Error 4xx",
+            "optional": false,
+            "field": "InvalidAPIKey",
+            "description": "<p>The app api key was invalid.</p> "
+          }
+        ]
+      },
+      "examples": [
+        {
+          "title": "Error-Response:",
+          "content": "HTTP/1.1 401 Unauthorized\n{\n\"status\":\"ERROR\",\n\"result\":\n {\n },\n\"error\":'InvalidAccessToken'\n}",
+          "type": "json"
+        }
+      ]
+    },
+    "filename": "resources/API/api.js",
+    "groupTitle": "Comment"
+  },
+  {
+    "type": "post",
+    "url": "/readComment",
+    "title": "Read a comment",
+    "version": "0.0.1",
+    "name": "ReadComment",
+    "group": "Comment",
+    "parameter": {
+      "fields": {
+        "Parameter": [
+          {
+            "group": "Parameter",
+            "type": "<p>String</p> ",
+            "optional": false,
+            "field": "token",
+            "description": "<p>Users ACCESS TOKEN.</p> "
+          },
+          {
+            "group": "Parameter",
+            "type": "<p>String</p> ",
+            "optional": false,
+            "field": "api_key",
+            "description": "<p>API key.</p> "
+          },
+          {
+            "group": "Parameter",
+            "type": "<p>Number</p> ",
+            "optional": false,
+            "field": "comment_id",
+            "description": "<p>Comment unique ID.</p> "
+          }
+        ]
+      }
+    },
+    "success": {
+      "examples": [
+        {
+          "title": "Success-Response:",
+          "content": "HTTP/1.1 200 OK\n{\n\"status\":\"SUCCESS\",\n\"result\":''\n\"error\":''\n}",
+          "type": "json"
+        }
+      ]
+    },
+    "error": {
+      "fields": {
+        "Error 4xx": [
+          {
+            "group": "Error 4xx",
+            "optional": false,
+            "field": "InvalidAccessToken",
+            "description": "<p>The access token was invalid.</p> "
+          },
+          {
+            "group": "Error 4xx",
+            "optional": false,
+            "field": "InvalidAPIKey",
+            "description": "<p>The app api key was invalid.</p> "
+          }
+        ]
+      },
+      "examples": [
+        {
+          "title": "Error-Response:",
+          "content": "HTTP/1.1 401 Unauthorized\n{\n\"status\":\"ERROR\",\n\"result\":\n {\n },\n\"error\":'InvalidAccessToken'\n}",
+          "type": "json"
+        }
+      ]
+    },
+    "filename": "resources/API/api.js",
+    "groupTitle": "Comment"
+  },
+  {
+    "type": "post",
+    "url": "/acceptFriendRequest",
+    "title": "Accept Friend Request",
+    "version": "0.0.1",
+    "name": "AcceptFriendRequest",
+    "group": "Friend",
+    "parameter": {
+      "fields": {
+        "Parameter": [
+          {
+            "group": "Parameter",
+            "type": "<p>String</p> ",
+            "optional": false,
+            "field": "token",
+            "description": "<p>Users ACCESS TOKEN.</p> "
+          },
+          {
+            "group": "Parameter",
+            "type": "<p>String</p> ",
+            "optional": false,
+            "field": "request_id",
+            "description": "<p>Friend request ID.</p> "
+          },
+          {
+            "group": "Parameter",
+            "type": "<p>Array</p> ",
+            "optional": false,
+            "field": "category_id",
+            "description": "<p>Categories to add friend.</p> "
+          },
+          {
+            "group": "Parameter",
+            "type": "<p>String</p> ",
+            "optional": false,
+            "field": "api_key",
+            "description": "<p>API key.</p> "
+          }
+        ]
+      }
+    },
+    "success": {
+      "examples": [
+        {
+          "title": "Success-Response:",
+          "content": "HTTP/1.1 200 OK\n{\n\"status\":\"SUCCESS\",\n\"result\":''\n \"error\":''\n}",
+          "type": "json"
+        }
+      ]
+    },
+    "error": {
+      "fields": {
+        "Error 4xx": [
+          {
+            "group": "Error 4xx",
+            "optional": false,
+            "field": "InvalidAccessToken",
+            "description": "<p>The access token was invalid.</p> "
+          },
+          {
+            "group": "Error 4xx",
+            "optional": false,
+            "field": "InvalidAPIKey",
+            "description": "<p>The app api key was invalid.</p> "
+          }
+        ]
+      },
+      "examples": [
+        {
+          "title": "Error-Response:",
+          "content": "HTTP/1.1 401 Unauthorized\n{\n\"status\":\"ERROR\",\n\"result\":\n {\n },\n\"error\":'InvalidAccessToken'\n}",
+          "type": "json"
+        }
+      ]
+    },
+    "filename": "resources/API/api.js",
+    "groupTitle": "Friend"
+  },
+  {
+    "type": "post",
+    "url": "/addFriendToCategory",
+    "title": "Add Friend To Category",
+    "version": "0.0.1",
+    "name": "AddFriendToCategory",
+    "group": "Friend",
+    "parameter": {
+      "fields": {
+        "Parameter": [
+          {
+            "group": "Parameter",
+            "type": "<p>String</p> ",
+            "optional": false,
+            "field": "token",
+            "description": "<p>Users ACCESS TOKEN.</p> "
+          },
+          {
+            "group": "Parameter",
+            "type": "<p>Number</p> ",
+            "optional": false,
+            "field": "profile_id",
+            "description": "<p>Friend Profile ID.</p> "
+          },
+          {
+            "group": "Parameter",
+            "type": "<p>Array</p> ",
+            "optional": false,
+            "field": "category_id",
+            "description": "<p>Category ID.</p> "
+          },
+          {
+            "group": "Parameter",
+            "type": "<p>String</p> ",
+            "optional": false,
+            "field": "api_key",
+            "description": "<p>API key.</p> "
+          }
+        ]
+      }
+    },
+    "success": {
+      "examples": [
+        {
+          "title": "Success-Response:",
+          "content": "HTTP/1.1 200 OK\n{\n\"status\":\"SUCCESS\",\n\"result\":''\n\"error\":''\n}",
+          "type": "json"
+        }
+      ]
+    },
+    "error": {
+      "fields": {
+        "Error 4xx": [
+          {
+            "group": "Error 4xx",
+            "optional": false,
+            "field": "InvalidAccessToken",
+            "description": "<p>The access token was invalid.</p> "
+          },
+          {
+            "group": "Error 4xx",
+            "optional": false,
+            "field": "InvalidAPIKey",
+            "description": "<p>The app api key was invalid.</p> "
+          }
+        ]
+      },
+      "examples": [
+        {
+          "title": "Error-Response:",
+          "content": "HTTP/1.1 401 Unauthorized\n{\n\"status\":\"ERROR\",\n\"result\":\n {\n },\n\"error\":'InvalidAccessToken'\n}",
+          "type": "json"
+        }
+      ]
+    },
+    "filename": "resources/API/api.js",
+    "groupTitle": "Friend"
+  },
+  {
+    "type": "post",
+    "url": "/declineFriendRequest",
+    "title": "Decline Friend Request",
+    "version": "0.0.1",
+    "name": "DeclineFriendRequest",
+    "group": "Friend",
+    "parameter": {
+      "fields": {
+        "Parameter": [
+          {
+            "group": "Parameter",
+            "type": "<p>String</p> ",
+            "optional": false,
+            "field": "token",
+            "description": "<p>Users ACCESS TOKEN.</p> "
+          },
+          {
+            "group": "Parameter",
+            "type": "<p>String</p> ",
+            "optional": false,
+            "field": "request_id",
+            "description": "<p>Friend request ID.</p> "
+          },
+          {
+            "group": "Parameter",
+            "type": "<p>String</p> ",
+            "optional": false,
+            "field": "api_key",
+            "description": "<p>API key.</p> "
+          }
+        ]
+      }
+    },
+    "success": {
+      "examples": [
+        {
+          "title": "Success-Response:",
+          "content": "HTTP/1.1 200 OK\n{\n\"status\":\"SUCCESS\",\n\"result\":''\n \"error\":''\n}",
+          "type": "json"
+        }
+      ]
+    },
+    "error": {
+      "fields": {
+        "Error 4xx": [
+          {
+            "group": "Error 4xx",
+            "optional": false,
+            "field": "InvalidAccessToken",
+            "description": "<p>The access token was invalid.</p> "
+          },
+          {
+            "group": "Error 4xx",
+            "optional": false,
+            "field": "InvalidAPIKey",
+            "description": "<p>The app api key was invalid.</p> "
+          }
+        ]
+      },
+      "examples": [
+        {
+          "title": "Error-Response:",
+          "content": "HTTP/1.1 401 Unauthorized\n{\n\"status\":\"ERROR\",\n\"result\":\n {\n },\n\"error\":'InvalidAccessToken'\n}",
+          "type": "json"
+        }
+      ]
+    },
+    "filename": "resources/API/api.js",
+    "groupTitle": "Friend"
+  },
+  {
+    "type": "post",
+    "url": "/friendProfile",
+    "title": "Friend Profile",
+    "version": "0.0.1",
+    "name": "FriendProfile",
+    "group": "Friend",
+    "parameter": {
+      "fields": {
+        "Parameter": [
+          {
+            "group": "Parameter",
+            "type": "<p>String</p> ",
+            "optional": false,
+            "field": "token",
+            "description": "<p>Users ACCESS TOKEN.</p> "
+          },
+          {
+            "group": "Parameter",
+            "type": "<p>String</p> ",
+            "optional": false,
+            "field": "profile_id",
+            "description": "<p>Friend's profile unique ID.</p> "
+          },
+          {
+            "group": "Parameter",
+            "type": "<p>String</p> ",
+            "optional": false,
+            "field": "api_key",
+            "description": "<p>API key.</p> "
+          }
+        ]
+      }
+    },
+    "success": {
+      "fields": {
+        "Success 200": [
+          {
+            "group": "Success 200",
+            "type": "<p>Number</p> ",
+            "optional": false,
+            "field": "profile_id",
+            "description": "<p>User Id of the User.</p> "
+          },
+          {
+            "group": "Success 200",
+            "type": "<p>String</p> ",
+            "optional": false,
+            "field": "username",
+            "description": "<p>Username of the User.</p> "
+          },
+          {
+            "group": "Success 200",
+            "type": "<p>String</p> ",
+            "optional": false,
+            "field": "email",
+            "description": "<p>Email of the User.</p> "
+          },
+          {
+            "group": "Success 200",
+            "type": "<p>String</p> ",
+            "optional": false,
+            "field": "profile_name",
+            "description": "<p>Full name of the User.</p> "
+          },
+          {
+            "group": "Success 200",
+            "type": "<p>String</p> ",
+            "optional": false,
+            "field": "picture",
+            "description": "<p>Photo of the User.</p> "
+          },
+          {
+            "group": "Success 200",
+            "type": "<p>Array</p> ",
+            "optional": false,
+            "field": "posts",
+            "description": "<p>Posts of the User.</p> "
+          }
+        ]
+      },
+      "examples": [
+        {
+          "title": "Success-Response:",
+          "content": "HTTP/1.1 200 OK\n{\n\"status\":\"SUCCESS\",\n\"result\":\n      {\n      \"profile_id\": 2\n      \"profile_name\": \"John David\",\n      \"picture\": \"http:\\/\\/www.cliquenet.com\\/profile.jpg\",\n      \"username\": \"john\"\n      \"posts\":[{\n         \"post_id\": 1,\n         \"description\": \"Lorem ipsum dolor sit amet, consectetur adipiscing elit.\",\n         \"date\": \"2016-02-24 10:30:00\",\n         \"media\": [\n             {\n                 \"id\": 1,\n                 \"photo_url\": \"http:\\/\\/www.cliquenet.com\\/photo.jpg\",\n                 \"video\": \"\",\n                 \"preview\": \"\",\n                 \"text\": \"\",\n                 \"link\": \"\",\n                 \"type\": \"PHOTO\",\n                 \"order\": 1\n             }\n         ]\n      }]\n      }\n \"error\":''\n}",
+          "type": "json"
+        }
+      ]
+    },
+    "error": {
+      "fields": {
+        "Error 4xx": [
+          {
+            "group": "Error 4xx",
+            "optional": false,
+            "field": "InvalidAccessToken",
+            "description": "<p>The access token was invalid.</p> "
+          },
+          {
+            "group": "Error 4xx",
+            "optional": false,
+            "field": "InvalidAPIKey",
+            "description": "<p>The app api key was invalid.</p> "
+          }
+        ]
+      },
+      "examples": [
+        {
+          "title": "Error-Response:",
+          "content": "HTTP/1.1 401 Unauthorized\n{\n\"status\":\"ERROR\",\n\"result\":\n {\n },\n\"error\":'InvalidAccessToken'\n}",
+          "type": "json"
+        }
+      ]
+    },
+    "filename": "resources/API/api.js",
+    "groupTitle": "Friend"
+  },
+  {
+    "type": "post",
+    "url": "/getFriend",
+    "title": "Friend List",
+    "version": "0.0.1",
+    "name": "GetFriend",
+    "group": "Friend",
+    "parameter": {
+      "fields": {
+        "Parameter": [
+          {
+            "group": "Parameter",
+            "type": "<p>String</p> ",
+            "optional": false,
+            "field": "token",
+            "description": "<p>Users ACCESS TOKEN.</p> "
+          },
+          {
+            "group": "Parameter",
+            "type": "<p>String</p> ",
+            "optional": false,
+            "field": "api_key",
+            "description": "<p>API key.</p> "
+          }
+        ]
+      }
+    },
+    "success": {
+      "fields": {
+        "Success 200": [
+          {
+            "group": "Success 200",
+            "type": "<p>Number</p> ",
+            "optional": false,
+            "field": "profile_id",
+            "description": "<p>User Id of the User.</p> "
+          },
+          {
+            "group": "Success 200",
+            "type": "<p>String</p> ",
+            "optional": false,
+            "field": "username",
+            "description": "<p>Username of the User.</p> "
+          },
+          {
+            "group": "Success 200",
+            "type": "<p>String</p> ",
+            "optional": false,
+            "field": "profile_name",
+            "description": "<p>Full name of the User.</p> "
+          },
+          {
+            "group": "Success 200",
+            "type": "<p>String</p> ",
+            "optional": false,
+            "field": "picture",
+            "description": "<p>Photo of the User.</p> "
+          },
+          {
+            "group": "Success 200",
+            "type": "<p>Array</p> ",
+            "optional": false,
+            "field": "category",
+            "description": "<p>Array of category.</p> "
+          }
+        ]
+      },
+      "examples": [
+        {
+          "title": "Success-Response:",
+          "content": "HTTP/1.1 200 OK\n{\n\"status\":\"SUCCESS\",\n\"result\":\n  [{\n      \"profile_id\": 2\n      \"profile_name\": \"John David\",\n      \"picture\": \"http:\\/\\/www.cliquenet.com\\/profile.jpg\",\n      \"username\": \"john\",\n      \"category\": [{\n         \"id\": 1,\n         \"name\": \"Work\"\n      }]\n   }]\n \"error\":''\n}",
+          "type": "json"
+        }
+      ]
+    },
+    "error": {
+      "fields": {
+        "Error 4xx": [
+          {
+            "group": "Error 4xx",
+            "optional": false,
+            "field": "InvalidAccessToken",
+            "description": "<p>The access token was invalid.</p> "
+          },
+          {
+            "group": "Error 4xx",
+            "optional": false,
+            "field": "InvalidAPIKey",
+            "description": "<p>The app api key was invalid.</p> "
+          }
+        ]
+      },
+      "examples": [
+        {
+          "title": "Error-Response:",
+          "content": "HTTP/1.1 401 Unauthorized\n{\n\"status\":\"ERROR\",\n\"result\":\n {\n },\n\"error\":'InvalidAccessToken'\n}",
+          "type": "json"
+        }
+      ]
+    },
+    "filename": "resources/API/api.js",
+    "groupTitle": "Friend"
+  },
+  {
+    "type": "post",
+    "url": "/getFriendRequest",
+    "title": "Get Friend Request",
+    "version": "0.0.1",
+    "name": "GetFriendRequest",
+    "group": "Friend",
+    "parameter": {
+      "fields": {
+        "Parameter": [
+          {
+            "group": "Parameter",
+            "type": "<p>String</p> ",
+            "optional": false,
+            "field": "token",
+            "description": "<p>Users ACCESS TOKEN.</p> "
+          },
+          {
+            "group": "Parameter",
+            "type": "<p>String</p> ",
+            "optional": false,
+            "field": "api_key",
+            "description": "<p>API key.</p> "
+          }
+        ]
+      }
+    },
+    "success": {
+      "fields": {
+        "Success 200": [
+          {
+            "group": "Success 200",
+            "type": "<p>Number</p> ",
+            "optional": false,
+            "field": "profile_id",
+            "description": "<p>User Id of the User.</p> "
+          },
+          {
+            "group": "Success 200",
+            "type": "<p>String</p> ",
+            "optional": false,
+            "field": "username",
+            "description": "<p>Username of the User.</p> "
+          },
+          {
+            "group": "Success 200",
+            "type": "<p>String</p> ",
+            "optional": false,
+            "field": "profile_name",
+            "description": "<p>Full name of the User.</p> "
+          },
+          {
+            "group": "Success 200",
+            "type": "<p>String</p> ",
+            "optional": false,
+            "field": "picture",
+            "description": "<p>Photo of the User.</p> "
+          },
+          {
+            "group": "Success 200",
+            "type": "<p>Number</p> ",
+            "optional": false,
+            "field": "request_id",
+            "description": "<p>Request ID.</p> "
+          }
+        ]
+      },
+      "examples": [
+        {
+          "title": "Success-Response:",
+          "content": "HTTP/1.1 200 OK\n{\n\"status\":\"SUCCESS\",\n\"result\":\n  [{\n      \"profile_id\": 2\n      \"profile_name\": \"John David\",\n      \"picture\": \"http:\\/\\/www.cliquenet.com\\/profile.jpg\",\n      \"username\": \"john\",\n      \"request_id\": 1\n   }]\n \"error\":''\n}",
+          "type": "json"
+        }
+      ]
+    },
+    "error": {
+      "fields": {
+        "Error 4xx": [
+          {
+            "group": "Error 4xx",
+            "optional": false,
+            "field": "InvalidAccessToken",
+            "description": "<p>The access token was invalid.</p> "
+          },
+          {
+            "group": "Error 4xx",
+            "optional": false,
+            "field": "InvalidAPIKey",
+            "description": "<p>The app api key was invalid.</p> "
+          }
+        ]
+      },
+      "examples": [
+        {
+          "title": "Error-Response:",
+          "content": "HTTP/1.1 401 Unauthorized\n{\n\"status\":\"ERROR\",\n\"result\":\n {\n },\n\"error\":'InvalidAccessToken'\n}",
+          "type": "json"
+        }
+      ]
+    },
+    "filename": "resources/API/api.js",
+    "groupTitle": "Friend"
+  },
+  {
+    "type": "post",
+    "url": "/removeFriend",
+    "title": "Remove Friend",
+    "version": "0.0.1",
+    "name": "RemoveFriend",
+    "group": "Friend",
+    "parameter": {
+      "fields": {
+        "Parameter": [
+          {
+            "group": "Parameter",
+            "type": "<p>String</p> ",
+            "optional": false,
+            "field": "token",
+            "description": "<p>Users ACCESS TOKEN.</p> "
+          },
+          {
+            "group": "Parameter",
+            "type": "<p>Number</p> ",
+            "optional": false,
+            "field": "profile_id",
+            "description": "<p>Friend Profile ID.</p> "
+          },
+          {
+            "group": "Parameter",
+            "type": "<p>String</p> ",
+            "optional": false,
+            "field": "api_key",
+            "description": "<p>API key.</p> "
+          }
+        ]
+      }
+    },
+    "success": {
+      "examples": [
+        {
+          "title": "Success-Response:",
+          "content": "HTTP/1.1 200 OK\n{\n\"status\":\"SUCCESS\",\n\"result\":''\n\"error\":''\n}",
+          "type": "json"
+        }
+      ]
+    },
+    "error": {
+      "fields": {
+        "Error 4xx": [
+          {
+            "group": "Error 4xx",
+            "optional": false,
+            "field": "InvalidAccessToken",
+            "description": "<p>The access token was invalid.</p> "
+          },
+          {
+            "group": "Error 4xx",
+            "optional": false,
+            "field": "InvalidAPIKey",
+            "description": "<p>The app api key was invalid.</p> "
+          }
+        ]
+      },
+      "examples": [
+        {
+          "title": "Error-Response:",
+          "content": "HTTP/1.1 401 Unauthorized\n{\n\"status\":\"ERROR\",\n\"result\":\n {\n },\n\"error\":'InvalidAccessToken'\n}",
+          "type": "json"
+        }
+      ]
+    },
+    "filename": "resources/API/api.js",
+    "groupTitle": "Friend"
+  },
+  {
+    "type": "post",
+    "url": "/searchFriend",
+    "title": "Search Friend",
+    "version": "0.0.1",
+    "name": "SearchFriend",
+    "group": "Friend",
+    "parameter": {
+      "fields": {
+        "Parameter": [
+          {
+            "group": "Parameter",
+            "type": "<p>String</p> ",
+            "optional": false,
+            "field": "token",
+            "description": "<p>Users ACCESS TOKEN.</p> "
+          },
+          {
+            "group": "Parameter",
+            "type": "<p>String</p> ",
+            "optional": false,
+            "field": "keyword",
+            "description": "<p>Friend name or email.</p> "
+          },
+          {
+            "group": "Parameter",
+            "type": "<p>String</p> ",
+            "optional": false,
+            "field": "api_key",
+            "description": "<p>API key.</p> "
+          }
+        ]
+      }
+    },
+    "success": {
+      "fields": {
+        "Success 200": [
+          {
+            "group": "Success 200",
+            "type": "<p>Number</p> ",
+            "optional": false,
+            "field": "profile_id",
+            "description": "<p>User Id of the User.</p> "
+          },
+          {
+            "group": "Success 200",
+            "type": "<p>String</p> ",
+            "optional": false,
+            "field": "username",
+            "description": "<p>Username of the User.</p> "
+          },
+          {
+            "group": "Success 200",
+            "type": "<p>String</p> ",
+            "optional": false,
+            "field": "email",
+            "description": "<p>Email of the User.</p> "
+          },
+          {
+            "group": "Success 200",
+            "type": "<p>String</p> ",
+            "optional": false,
+            "field": "profile_name",
+            "description": "<p>Full name of the User.</p> "
+          },
+          {
+            "group": "Success 200",
+            "type": "<p>String</p> ",
+            "optional": false,
+            "field": "picture",
+            "description": "<p>Photo of the User.</p> "
+          },
+          {
+            "group": "Success 200",
+            "type": "<p>Number</p> ",
+            "optional": false,
+            "field": "status",
+            "description": "<p>Friend status.</p> "
+          }
+        ]
+      },
+      "examples": [
+        {
+          "title": "Success-Response:",
+          "content": "HTTP/1.1 200 OK\n{\n\"status\":\"SUCCESS\",\n\"result\":\n  [{\n      \"profile_id\": 2\n      \"profile_name\": \"John David\",\n      \"picture\": \"http:\\/\\/www.cliquenet.com\\/profile.jpg\",\n      \"username\": \"john\",\n      \"status\": 1\n   }]\n \"error\":''\n}",
+          "type": "json"
+        }
+      ]
+    },
+    "error": {
+      "fields": {
+        "Error 4xx": [
+          {
+            "group": "Error 4xx",
+            "optional": false,
+            "field": "InvalidAccessToken",
+            "description": "<p>The access token was invalid.</p> "
+          },
+          {
+            "group": "Error 4xx",
+            "optional": false,
+            "field": "InvalidAPIKey",
+            "description": "<p>The app api key was invalid.</p> "
+          }
+        ]
+      },
+      "examples": [
+        {
+          "title": "Error-Response:",
+          "content": "HTTP/1.1 401 Unauthorized\n{\n\"status\":\"ERROR\",\n\"result\":\n {\n },\n\"error\":'InvalidAccessToken'\n}",
+          "type": "json"
+        }
+      ]
+    },
+    "filename": "resources/API/api.js",
+    "groupTitle": "Friend"
+  },
+  {
+    "type": "post",
+    "url": "/sendFriendRequest",
+    "title": "Send Friend Request",
+    "version": "0.0.1",
+    "name": "SendFriendRequest",
+    "group": "Friend",
+    "parameter": {
+      "fields": {
+        "Parameter": [
+          {
+            "group": "Parameter",
+            "type": "<p>String</p> ",
+            "optional": false,
+            "field": "token",
+            "description": "<p>Users ACCESS TOKEN.</p> "
+          },
+          {
+            "group": "Parameter",
+            "type": "<p>String</p> ",
+            "optional": false,
+            "field": "profile_id",
+            "description": "<p>Friend profile ID.</p> "
+          },
+          {
+            "group": "Parameter",
+            "type": "<p>String</p> ",
+            "optional": false,
+            "field": "api_key",
+            "description": "<p>API key.</p> "
+          }
+        ]
+      }
+    },
+    "success": {
+      "examples": [
+        {
+          "title": "Success-Response:",
+          "content": "HTTP/1.1 200 OK\n{\n\"status\":\"SUCCESS\",\n\"result\":''\n \"error\":''\n}",
+          "type": "json"
+        }
+      ]
+    },
+    "error": {
+      "fields": {
+        "Error 4xx": [
+          {
+            "group": "Error 4xx",
+            "optional": false,
+            "field": "InvalidAccessToken",
+            "description": "<p>The access token was invalid.</p> "
+          },
+          {
+            "group": "Error 4xx",
+            "optional": false,
+            "field": "InvalidAPIKey",
+            "description": "<p>The app api key was invalid.</p> "
+          }
+        ]
+      },
+      "examples": [
+        {
+          "title": "Error-Response:",
+          "content": "HTTP/1.1 401 Unauthorized\n{\n\"status\":\"ERROR\",\n\"result\":\n {\n },\n\"error\":'InvalidAccessToken'\n}",
+          "type": "json"
+        }
+      ]
+    },
+    "filename": "resources/API/api.js",
+    "groupTitle": "Friend"
+  },
+  {
+    "type": "post",
+    "url": "/addMedia",
+    "title": "Add media to a post",
+    "version": "0.0.1",
+    "name": "AddMedia",
+    "group": "Post",
+    "parameter": {
+      "fields": {
+        "Parameter": [
+          {
+            "group": "Parameter",
+            "type": "<p>String</p> ",
+            "optional": false,
+            "field": "token",
+            "description": "<p>Users ACCESS TOKEN.</p> "
+          },
+          {
+            "group": "Parameter",
+            "type": "<p>String</p> ",
+            "optional": false,
+            "field": "api_key",
+            "description": "<p>API key.</p> "
+          },
+          {
+            "group": "Parameter",
+            "type": "<p>Number</p> ",
+            "optional": false,
+            "field": "post_id",
+            "description": "<p>Post unique ID.</p> "
+          },
+          {
+            "group": "Parameter",
+            "type": "<p>String</p> ",
+            "optional": false,
+            "field": "type",
+            "description": "<p>Media type.</p> "
+          },
+          {
+            "group": "Parameter",
+            "type": "<p>File</p> ",
+            "optional": false,
+            "field": "photo",
+            "description": "<p>Photo file.</p> "
+          },
+          {
+            "group": "Parameter",
+            "type": "<p>File</p> ",
+            "optional": false,
+            "field": "video",
+            "description": "<p>Video file.</p> "
+          },
+          {
+            "group": "Parameter",
+            "type": "<p>File</p> ",
+            "optional": false,
+            "field": "preview",
+            "description": "<p>Priview file.</p> "
+          },
+          {
+            "group": "Parameter",
+            "type": "<p>String</p> ",
+            "optional": false,
+            "field": "text",
+            "description": "<p>Text for post.</p> "
+          },
+          {
+            "group": "Parameter",
+            "type": "<p>String</p> ",
+            "optional": false,
+            "field": "link",
+            "description": "<p>Link for post.</p> "
+          },
+          {
+            "group": "Parameter",
+            "type": "<p>Number</p> ",
+            "optional": false,
+            "field": "order",
+            "description": "<p>Order of media.</p> "
+          }
+        ]
+      }
+    },
+    "success": {
+      "examples": [
+        {
+          "title": "Success-Response:",
+          "content": "HTTP/1.1 200 OK\n{\n\"status\":\"SUCCESS\",\n\"result\":''\n\"error\":''\n}",
+          "type": "json"
+        }
+      ]
+    },
+    "error": {
+      "fields": {
+        "Error 4xx": [
+          {
+            "group": "Error 4xx",
+            "optional": false,
+            "field": "InvalidAccessToken",
+            "description": "<p>The access token was invalid.</p> "
+          },
+          {
+            "group": "Error 4xx",
+            "optional": false,
+            "field": "InvalidAPIKey",
+            "description": "<p>The app api key was invalid.</p> "
+          }
+        ]
+      },
+      "examples": [
+        {
+          "title": "Error-Response:",
+          "content": "HTTP/1.1 401 Unauthorized\n{\n\"status\":\"ERROR\",\n\"result\":\n {\n },\n\"error\":'InvalidAccessToken'\n}",
+          "type": "json"
+        }
+      ]
+    },
+    "filename": "resources/API/api.js",
+    "groupTitle": "Post"
+  },
+  {
+    "type": "post",
+    "url": "/addPost/",
+    "title": "Create Post",
+    "version": "0.0.1",
+    "name": "AddPost",
+    "group": "Post",
+    "parameter": {
+      "fields": {
+        "Parameter": [
+          {
+            "group": "Parameter",
+            "type": "<p>Array</p> ",
+            "optional": false,
+            "field": "category",
+            "description": "<p>List of category to share the post.</p> "
+          },
+          {
+            "group": "Parameter",
+            "type": "<p>String</p> ",
+            "optional": false,
+            "field": "description",
+            "description": "<p>Text description of post.</p> "
+          },
+          {
+            "group": "Parameter",
+            "type": "<p>String</p> ",
+            "optional": false,
+            "field": "api_key",
+            "description": "<p>API key.</p> "
+          },
+          {
+            "group": "Parameter",
+            "type": "<p>String</p> ",
+            "optional": false,
+            "field": "token",
+            "description": "<p>Users ACCESS TOKEN.</p> "
+          }
+        ]
+      }
+    },
+    "success": {
+      "examples": [
+        {
+          "title": "Success-Response:",
+          "content": "HTTP/1.1 200 OK\n{\n\"status\":\"SUCCESS\",\n\"result\":{\n \"post_id\": 1\n},\n\"error\":''\n}",
+          "type": "json"
+        }
+      ]
+    },
+    "error": {
+      "fields": {
+        "Error 4xx": [
+          {
+            "group": "Error 4xx",
+            "optional": false,
+            "field": "InvalidAccessToken",
+            "description": "<p>The access token was invalid.</p> "
+          },
+          {
+            "group": "Error 4xx",
+            "optional": false,
+            "field": "InvalidAPIKey",
+            "description": "<p>The app api key was invalid.</p> "
+          }
+        ]
+      },
+      "examples": [
+        {
+          "title": "Error-Response:",
+          "content": "HTTP/1.1 401 Unauthorized\n{\n\"status\":\"ERROR\",\n\"result\":\n {\n },\n\"error\":'InvalidAccessToken'\n}",
+          "type": "json"
+        }
+      ]
+    },
+    "filename": "resources/API/api.js",
+    "groupTitle": "Post"
+  },
+  {
+    "type": "post",
+    "url": "/completeMediaUpload",
+    "title": "End of media upload",
+    "version": "0.0.1",
+    "name": "CompleteMediaUpload",
+    "group": "Post",
+    "parameter": {
+      "fields": {
+        "Parameter": [
+          {
+            "group": "Parameter",
+            "type": "<p>String</p> ",
+            "optional": false,
+            "field": "token",
+            "description": "<p>Users ACCESS TOKEN.</p> "
+          },
+          {
+            "group": "Parameter",
+            "type": "<p>String</p> ",
+            "optional": false,
+            "field": "api_key",
+            "description": "<p>API key.</p> "
+          },
+          {
+            "group": "Parameter",
+            "type": "<p>Number</p> ",
+            "optional": false,
+            "field": "post_id",
+            "description": "<p>Post unique ID.</p> "
+          }
+        ]
+      }
+    },
+    "success": {
+      "examples": [
+        {
+          "title": "Success-Response:",
+          "content": "HTTP/1.1 200 OK\n{\n\"status\":\"SUCCESS\",\n\"result\":''\n\"error\":''\n}",
+          "type": "json"
+        }
+      ]
+    },
+    "error": {
+      "fields": {
+        "Error 4xx": [
+          {
+            "group": "Error 4xx",
+            "optional": false,
+            "field": "InvalidAccessToken",
+            "description": "<p>The access token was invalid.</p> "
+          },
+          {
+            "group": "Error 4xx",
+            "optional": false,
+            "field": "InvalidAPIKey",
+            "description": "<p>The app api key was invalid.</p> "
+          }
+        ]
+      },
+      "examples": [
+        {
+          "title": "Error-Response:",
+          "content": "HTTP/1.1 401 Unauthorized\n{\n\"status\":\"ERROR\",\n\"result\":\n {\n },\n\"error\":'InvalidAccessToken'\n}",
+          "type": "json"
+        }
+      ]
+    },
+    "filename": "resources/API/api.js",
+    "groupTitle": "Post"
+  },
+  {
+    "type": "post",
+    "url": "/countPostView",
+    "title": "Count Post View",
+    "version": "0.0.1",
+    "name": "CountPostView",
+    "group": "Post",
+    "parameter": {
+      "fields": {
+        "Parameter": [
+          {
+            "group": "Parameter",
+            "type": "<p>String</p> ",
+            "optional": false,
+            "field": "token",
+            "description": "<p>Users ACCESS TOKEN.</p> "
+          },
+          {
+            "group": "Parameter",
+            "type": "<p>String</p> ",
+            "optional": false,
+            "field": "post_id",
+            "description": "<p>Post ID.</p> "
+          },
+          {
+            "group": "Parameter",
+            "type": "<p>String</p> ",
+            "optional": false,
+            "field": "api_key",
+            "description": "<p>API key.</p> "
+          }
+        ]
+      }
+    },
+    "success": {
+      "examples": [
+        {
+          "title": "Success-Response:",
+          "content": "HTTP/1.1 200 OK\n{\n\"status\":\"SUCCESS\",\n\"result\":''\n \"error\":''\n}",
+          "type": "json"
+        }
+      ]
+    },
+    "error": {
+      "fields": {
+        "Error 4xx": [
+          {
+            "group": "Error 4xx",
+            "optional": false,
+            "field": "InvalidAccessToken",
+            "description": "<p>The access token was invalid.</p> "
+          },
+          {
+            "group": "Error 4xx",
+            "optional": false,
+            "field": "InvalidAPIKey",
+            "description": "<p>The app api key was invalid.</p> "
+          }
+        ]
+      },
+      "examples": [
+        {
+          "title": "Error-Response:",
+          "content": "HTTP/1.1 401 Unauthorized\n{\n\"status\":\"ERROR\",\n\"result\":\n {\n },\n\"error\":'InvalidAccessToken'\n}",
+          "type": "json"
+        }
+      ]
+    },
+    "filename": "resources/API/api.js",
+    "groupTitle": "Post"
+  },
+  {
+    "type": "post",
+    "url": "/deletePost",
+    "title": "Delete a post",
+    "version": "0.0.1",
+    "name": "DeletePost",
+    "group": "Post",
+    "parameter": {
+      "fields": {
+        "Parameter": [
+          {
+            "group": "Parameter",
+            "type": "<p>String</p> ",
+            "optional": false,
+            "field": "token",
+            "description": "<p>Users ACCESS TOKEN.</p> "
+          },
+          {
+            "group": "Parameter",
+            "type": "<p>String</p> ",
+            "optional": false,
+            "field": "api_key",
+            "description": "<p>API key.</p> "
+          },
+          {
+            "group": "Parameter",
+            "type": "<p>Number</p> ",
+            "optional": false,
+            "field": "post_id",
+            "description": "<p>Post unique ID.</p> "
+          }
+        ]
+      }
+    },
+    "success": {
+      "examples": [
+        {
+          "title": "Success-Response:",
+          "content": "HTTP/1.1 200 OK\n{\n\"status\":\"SUCCESS\",\n\"result\":''\n\"error\":''\n}",
+          "type": "json"
+        }
+      ]
+    },
+    "error": {
+      "fields": {
+        "Error 4xx": [
+          {
+            "group": "Error 4xx",
+            "optional": false,
+            "field": "InvalidAccessToken",
+            "description": "<p>The access token was invalid.</p> "
+          },
+          {
+            "group": "Error 4xx",
+            "optional": false,
+            "field": "InvalidAPIKey",
+            "description": "<p>The app api key was invalid.</p> "
+          }
+        ]
+      },
+      "examples": [
+        {
+          "title": "Error-Response:",
+          "content": "HTTP/1.1 401 Unauthorized\n{\n\"status\":\"ERROR\",\n\"result\":\n {\n },\n\"error\":'InvalidAccessToken'\n}",
+          "type": "json"
+        }
+      ]
+    },
+    "filename": "resources/API/api.js",
+    "groupTitle": "Post"
+  },
+  {
+    "type": "post",
+    "url": "/getPost",
+    "title": "Get a post",
+    "version": "0.0.1",
+    "name": "GetPost",
+    "group": "Post",
+    "parameter": {
+      "fields": {
+        "Parameter": [
+          {
+            "group": "Parameter",
+            "type": "<p>String</p> ",
+            "optional": false,
+            "field": "token",
+            "description": "<p>Users ACCESS TOKEN.</p> "
+          },
+          {
+            "group": "Parameter",
+            "type": "<p>String</p> ",
+            "optional": false,
+            "field": "post_id",
+            "description": "<p>Post unique ID.</p> "
+          },
+          {
+            "group": "Parameter",
+            "type": "<p>String</p> ",
+            "optional": false,
+            "field": "api_key",
+            "description": "<p>API key.</p> "
+          }
+        ]
+      }
+    },
+    "success": {
+      "examples": [
+        {
+          "title": "Success-Response:",
+          "content": "HTTP/1.1 200 OK\n{\n\"status\":\"SUCCESS\",\n\"result\":{\n      \"post_id\": 1,\n      \"description\": \"Lorem ipsum dolor sit amet, consectetur adipiscing elit.\",\n      \"profile_id\": 2\n      \"profile_name\": \"John\",\n      \"date\": \"2016-02-24 10:30:00\",\n      \"media\": [\n         {\n             \"id\": 1,\n             \"photo\": \"http:\\/\\/www.cliquenet.com\\/photo.jpg\",\n             \"video\": \"\",\n             \"preview\": \"\",\n             \"text\": \"\",\n             \"link\": \"\"\n             \"type\": \"PHOTO\",\n             \"order\": 1\n         }\n      ]\n      },\n \"error\":''\n}",
+          "type": "json"
+        }
+      ]
+    },
+    "error": {
+      "fields": {
+        "Error 4xx": [
+          {
+            "group": "Error 4xx",
+            "optional": false,
+            "field": "InvalidAccessToken",
+            "description": "<p>The access token was invalid.</p> "
+          },
+          {
+            "group": "Error 4xx",
+            "optional": false,
+            "field": "InvalidAPIKey",
+            "description": "<p>The app api key was invalid.</p> "
+          }
+        ]
+      },
+      "examples": [
+        {
+          "title": "Error-Response:",
+          "content": "HTTP/1.1 401 Unauthorized\n{\n\"status\":\"ERROR\",\n\"result\":\n {\n },\n\"error\":'InvalidAccessToken'\n}",
+          "type": "json"
+        }
+      ]
+    },
+    "filename": "resources/API/api.js",
+    "groupTitle": "Post"
+  },
+  {
+    "type": "post",
+    "url": "/getPostViewCount",
+    "title": "Get Post View Count",
+    "version": "0.0.1",
+    "name": "GetPostCountView",
+    "group": "Post",
+    "parameter": {
+      "fields": {
+        "Parameter": [
+          {
+            "group": "Parameter",
+            "type": "<p>String</p> ",
+            "optional": false,
+            "field": "token",
+            "description": "<p>Users ACCESS TOKEN.</p> "
+          },
+          {
+            "group": "Parameter",
+            "type": "<p>String</p> ",
+            "optional": false,
+            "field": "post_id",
+            "description": "<p>Post ID.</p> "
+          },
+          {
+            "group": "Parameter",
+            "type": "<p>String</p> ",
+            "optional": false,
+            "field": "api_key",
+            "description": "<p>API key.</p> "
+          }
+        ]
+      }
+    },
+    "success": {
+      "examples": [
+        {
+          "title": "Success-Response:",
+          "content": "HTTP/1.1 200 OK\n{\n\"status\":\"SUCCESS\",\n\"result\":{\n     \"count\": 1,\n     \"user\": [{\n         \"profile_id\": 1,\n         \"username\": \"john\"\n     }]\n}\n\"error\":''\n}",
+          "type": "json"
+        }
+      ]
+    },
+    "error": {
+      "fields": {
+        "Error 4xx": [
+          {
+            "group": "Error 4xx",
+            "optional": false,
+            "field": "InvalidAccessToken",
+            "description": "<p>The access token was invalid.</p> "
+          },
+          {
+            "group": "Error 4xx",
+            "optional": false,
+            "field": "InvalidAPIKey",
+            "description": "<p>The app api key was invalid.</p> "
+          }
+        ]
+      },
+      "examples": [
+        {
+          "title": "Error-Response:",
+          "content": "HTTP/1.1 401 Unauthorized\n{\n\"status\":\"ERROR\",\n\"result\":\n {\n },\n\"error\":'InvalidAccessToken'\n}",
+          "type": "json"
+        }
+      ]
+    },
+    "filename": "resources/API/api.js",
+    "groupTitle": "Post"
+  },
+  {
+    "type": "post",
+    "url": "/postByCategory",
+    "title": "Post By Category",
+    "version": "0.0.1",
+    "name": "PostByCategory",
+    "group": "Post",
+    "parameter": {
+      "fields": {
+        "Parameter": [
+          {
+            "group": "Parameter",
+            "type": "<p>String</p> ",
+            "optional": false,
+            "field": "token",
+            "description": "<p>Users ACCESS TOKEN.</p> "
+          },
+          {
+            "group": "Parameter",
+            "type": "<p>String</p> ",
+            "optional": false,
+            "field": "category_id",
+            "description": "<p>Category unique ID.</p> "
+          },
+          {
+            "group": "Parameter",
+            "type": "<p>String</p> ",
+            "optional": false,
+            "field": "api_key",
+            "description": "<p>API key.</p> "
+          }
+        ]
+      }
+    },
+    "success": {
+      "examples": [
+        {
+          "title": "Success-Response:",
+          "content": "HTTP/1.1 200 OK\n{\n\"status\":\"SUCCESS\",\n\"result\":[\n      {\n      \"post_id\": 1,\n      \"description\": \"Lorem ipsum dolor sit amet, consectetur adipiscing elit.\",\n      \"profile_id\": 2\n      \"profile_name\": \"John\",\n      \"date\": \"2016-02-24 10:30:00\",\n      \"media\": [\n         {\n             \"id\": 1,\n             \"photo\": \"http:\\/\\/www.cliquenet.com\\/photo.jpg\",\n             \"video\": \"\",\n             \"preview\": \"\",\n             \"text\": \"\",\n             \"link\": \"\"\n             \"type\": \"PHOTO\",\n             \"order\": 1\n         }\n      ]\n      },\n ]\n \"error\":''\n}",
+          "type": "json"
+        }
+      ]
+    },
+    "error": {
+      "fields": {
+        "Error 4xx": [
+          {
+            "group": "Error 4xx",
+            "optional": false,
+            "field": "InvalidAccessToken",
+            "description": "<p>The access token was invalid.</p> "
+          },
+          {
+            "group": "Error 4xx",
+            "optional": false,
+            "field": "InvalidAPIKey",
+            "description": "<p>The app api key was invalid.</p> "
+          }
+        ]
+      },
+      "examples": [
+        {
+          "title": "Error-Response:",
+          "content": "HTTP/1.1 401 Unauthorized\n{\n\"status\":\"ERROR\",\n\"result\":\n {\n },\n\"error\":'InvalidAccessToken'\n}",
+          "type": "json"
+        }
+      ]
+    },
+    "filename": "resources/API/api.js",
+    "groupTitle": "Post"
+  },
+  {
+    "type": "post",
+    "url": "/inAppPurchase",
+    "title": "Get in-app purchase status",
+    "version": "0.0.1",
+    "name": "InAppPurchase",
+    "group": "Purchase",
+    "parameter": {
+      "fields": {
+        "Parameter": [
+          {
+            "group": "Parameter",
+            "type": "<p>String</p> ",
+            "optional": false,
+            "field": "token",
+            "description": "<p>Users ACCESS TOKEN.</p> "
+          },
+          {
+            "group": "Parameter",
+            "type": "<p>String</p> ",
+            "optional": false,
+            "field": "api_key",
+            "description": "<p>API key.</p> "
+          },
+          {
+            "group": "Parameter",
+            "type": "<p>Number</p> ",
+            "optional": false,
+            "field": "inAppPurchase",
+            "description": "<p>In-app purchase status.</p> "
+          }
+        ]
+      }
+    },
+    "success": {
+      "examples": [
+        {
+          "title": "Success-Response:",
+          "content": "HTTP/1.1 200 OK\n{\n\"status\":\"SUCCESS\",\n\"result\":''\n\"error\":''\n}",
+          "type": "json"
+        }
+      ]
+    },
+    "error": {
+      "fields": {
+        "Error 4xx": [
+          {
+            "group": "Error 4xx",
+            "optional": false,
+            "field": "InvalidAccessToken",
+            "description": "<p>The access token was invalid.</p> "
+          },
+          {
+            "group": "Error 4xx",
+            "optional": false,
+            "field": "InvalidAPIKey",
+            "description": "<p>The app api key was invalid.</p> "
+          }
+        ]
+      },
+      "examples": [
+        {
+          "title": "Error-Response:",
+          "content": "HTTP/1.1 401 Unauthorized\n{\n\"status\":\"ERROR\",\n\"result\":\n {\n },\n\"error\":'InvalidAccessToken'\n}",
+          "type": "json"
+        }
+      ]
+    },
+    "filename": "resources/API/api.js",
+    "groupTitle": "Purchase"
+  },
+  {
+    "type": "post",
+    "url": "/updatePassword/",
+    "title": "User Password Update",
+    "version": "0.0.1",
+    "name": "UpdatePassword",
+    "group": "User",
+    "parameter": {
+      "fields": {
+        "Parameter": [
+          {
+            "group": "Parameter",
+            "type": "<p>String</p> ",
+            "optional": false,
+            "field": "current_password",
+            "description": "<p>Users CURRENT PASSWORD.</p> "
+          },
+          {
+            "group": "Parameter",
+            "type": "<p>String</p> ",
+            "optional": false,
+            "field": "new_password",
+            "description": "<p>Users NEW PASSWORD.</p> "
+          },
+          {
+            "group": "Parameter",
+            "type": "<p>String</p> ",
+            "optional": false,
+            "field": "api_key",
+            "description": "<p>API key.</p> "
+          },
+          {
+            "group": "Parameter",
+            "type": "<p>String</p> ",
+            "optional": false,
+            "field": "token",
+            "description": "<p>Users ACCESS TOKEN.</p> "
+          }
+        ]
+      }
+    },
+    "success": {
+      "examples": [
+        {
+          "title": "Success-Response:",
+          "content": "HTTP/1.1 200 OK\n{\n\"status\":\"SUCCESS\",\n\"result\":'',\n\"error\":''\n}",
+          "type": "json"
+        }
+      ]
+    },
+    "error": {
+      "fields": {
+        "Error 4xx": [
+          {
+            "group": "Error 4xx",
+            "optional": false,
+            "field": "InvalidPassword",
+            "description": "<p>The email of the User is already exist.</p> "
+          },
+          {
+            "group": "Error 4xx",
+            "optional": false,
+            "field": "InvalidAPIKey",
+            "description": "<p>The app api key was invalid.</p> "
+          },
+          {
+            "group": "Error 4xx",
+            "optional": false,
+            "field": "PasswordMismatched",
+            "description": "<p>The current password was invalid.</p> "
+          }
+        ]
+      },
+      "examples": [
+        {
+          "title": "Error-Response:",
+          "content": "HTTP/1.1 400 Bad Request\n{\n\"status\":\"ERROR\",\n\"result\":'',\n\"error\":'InvalidPassword'\n}",
+          "type": "json"
+        }
+      ]
+    },
+    "filename": "resources/API/api.js",
+    "groupTitle": "User"
+  },
+  {
+    "type": "post",
+    "url": "/updateProfile/",
+    "title": "User Profile Update",
+    "version": "0.0.1",
+    "name": "UpdateProfile",
+    "group": "User",
+    "parameter": {
+      "fields": {
+        "Parameter": [
+          {
+            "group": "Parameter",
+            "type": "<p>String</p> ",
+            "optional": false,
+            "field": "fullname",
+            "description": "<p>Users FULLNAME.</p> "
+          },
+          {
+            "group": "Parameter",
+            "type": "<p>String</p> ",
+            "optional": false,
+            "field": "email",
+            "description": "<p>Users unique EMAIL.</p> "
+          },
+          {
+            "group": "Parameter",
+            "type": "<p>String</p> ",
+            "optional": false,
+            "field": "username",
+            "description": "<p>Users unique USERNAME.</p> "
+          },
+          {
+            "group": "Parameter",
+            "type": "<p>String</p> ",
+            "optional": false,
+            "field": "api_key",
+            "description": "<p>API key.</p> "
+          },
+          {
+            "group": "Parameter",
+            "type": "<p>String</p> ",
+            "optional": false,
+            "field": "token",
+            "description": "<p>Users ACCESS TOKEN.</p> "
+          }
+        ]
+      }
+    },
+    "success": {
+      "fields": {
+        "Success 200": [
+          {
+            "group": "Success 200",
+            "type": "<p>Number</p> ",
+            "optional": false,
+            "field": "id",
+            "description": "<p>User Id of the User.</p> "
+          },
+          {
+            "group": "Success 200",
+            "type": "<p>String</p> ",
+            "optional": false,
+            "field": "username",
+            "description": "<p>Username of the User.</p> "
+          },
+          {
+            "group": "Success 200",
+            "type": "<p>String</p> ",
+            "optional": false,
+            "field": "email",
+            "description": "<p>Email of the User.</p> "
+          },
+          {
+            "group": "Success 200",
+            "type": "<p>String</p> ",
+            "optional": false,
+            "field": "first_time_use",
+            "description": "<p>First time user indicator.</p> "
+          },
+          {
+            "group": "Success 200",
+            "type": "<p>String</p> ",
+            "optional": false,
+            "field": "token",
+            "description": "<p>Access Token of the User.</p> "
+          }
+        ]
+      },
+      "examples": [
+        {
+          "title": "Success-Response:",
+          "content": "HTTP/1.1 200 OK\n{\n\"status\":\"SUCCESS\",\n\"result\":\n {\n     \"id\": \"1\",\n     \"username\": \"John\",\n     \"email\": \"john@gmail.com\",\n     \"first_time_use\":\"1\"\n     \"token\":\"TMFljslIgoDitqmgfGFfhBXF8NvgRdrW9\",\n     \"photo\": \"http:\\/\\/www.cliquenet.com\\/profile.jpg\",\n },\n \"error\":''\n}",
+          "type": "json"
+        }
+      ]
+    },
+    "error": {
+      "fields": {
+        "Error 4xx": [
+          {
+            "group": "Error 4xx",
+            "optional": false,
+            "field": "EmailAlreadyExist",
+            "description": "<p>The email of the User is already exist.</p> "
+          },
+          {
+            "group": "Error 4xx",
+            "optional": false,
+            "field": "InvalidAPIKey",
+            "description": "<p>The app api key was invalid.</p> "
+          },
+          {
+            "group": "Error 4xx",
+            "optional": false,
+            "field": "PasswordMismatched",
+            "description": "<p>The current password was invalid.</p> "
+          }
+        ]
+      },
+      "examples": [
+        {
+          "title": "Error-Response:",
+          "content": "HTTP/1.1 400 Bad Request\n{\n\"status\":\"ERROR\",\n\"result\":'',\n\"error\":'EmailAlreadyExist'\n}",
+          "type": "json"
+        }
+      ]
+    },
+    "filename": "resources/API/api.js",
+    "groupTitle": "User"
+  },
+  {
+    "type": "post",
+    "url": "/uploadProfilePicture",
+    "title": "Upload Profile Picture",
+    "version": "0.0.1",
+    "name": "UploadProfilePicture",
+    "group": "User",
+    "parameter": {
+      "fields": {
+        "Parameter": [
+          {
+            "group": "Parameter",
+            "type": "<p>String</p> ",
+            "optional": false,
+            "field": "token",
+            "description": "<p>Users ACCESS TOKEN.</p> "
+          },
+          {
+            "group": "Parameter",
+            "type": "<p>String</p> ",
+            "optional": false,
+            "field": "picture",
+            "description": "<p>User profile picture.</p> "
+          },
+          {
+            "group": "Parameter",
+            "type": "<p>String</p> ",
+            "optional": false,
+            "field": "api_key",
+            "description": "<p>API key.</p> "
+          }
+        ]
+      }
+    },
+    "success": {
+      "examples": [
+        {
+          "title": "Success-Response:",
+          "content": "HTTP/1.1 200 OK\n{\n\"status\":\"SUCCESS\",\n\"result\":{\n     \"picture\": \"http:\\/\\/www.cliquenet.com\\/profile.jpg\"\n}\n \"error\":''\n}",
+          "type": "json"
+        }
+      ]
+    },
+    "error": {
+      "fields": {
+        "Error 4xx": [
+          {
+            "group": "Error 4xx",
+            "optional": false,
+            "field": "InvalidAccessToken",
+            "description": "<p>The access token was invalid.</p> "
+          },
+          {
+            "group": "Error 4xx",
+            "optional": false,
+            "field": "InvalidAPIKey",
+            "description": "<p>The app api key was invalid.</p> "
+          }
+        ]
+      },
+      "examples": [
+        {
+          "title": "Error-Response:",
+          "content": "HTTP/1.1 401 Unauthorized\n{\n\"status\":\"ERROR\",\n\"result\":\n {\n },\n\"error\":'InvalidAccessToken'\n}",
+          "type": "json"
+        }
+      ]
+    },
+    "filename": "resources/API/api.js",
+    "groupTitle": "User"
+  },
+  {
+    "type": "post",
+    "url": "/userForgotPassword/",
+    "title": "User Forgot Password",
+    "version": "0.0.1",
+    "name": "UserForgotPassword",
+    "group": "User",
+    "parameter": {
+      "fields": {
+        "Parameter": [
+          {
+            "group": "Parameter",
+            "type": "<p>String</p> ",
+            "optional": false,
+            "field": "email",
+            "description": "<p>Users EMAIL.</p> "
+          },
+          {
+            "group": "Parameter",
+            "type": "<p>String</p> ",
+            "optional": false,
+            "field": "api_key",
+            "description": "<p>API key.</p> "
+          }
+        ]
+      }
+    },
+    "success": {
+      "fields": {
+        "Success 200": [
+          {
+            "group": "Success 200",
+            "type": "<p>String</p> ",
+            "optional": false,
+            "field": "email",
+            "description": "<p>Email of user.</p> "
+          }
+        ]
+      },
+      "examples": [
+        {
+          "title": "Success-Response:",
+          "content": "HTTP/1.1 200 OK\n{\n\"status\":\"SUCCESS\",\n\"result\":\n {\n     \"email\": \"john@gmail.com\",\n },\n \"error\":''\n}",
+          "type": "json"
+        }
+      ]
+    },
+    "error": {
+      "fields": {
+        "Error 4xx": [
+          {
+            "group": "Error 4xx",
+            "optional": false,
+            "field": "EmailNotFound",
+            "description": "<p>The email was not found.</p> "
+          },
+          {
+            "group": "Error 4xx",
+            "optional": false,
+            "field": "InvalidAccessToken",
+            "description": "<p>The access token was invalid.</p> "
+          },
+          {
+            "group": "Error 4xx",
+            "optional": false,
+            "field": "InvalidAPIKey",
+            "description": "<p>The app api key was invalid.</p> "
+          }
+        ]
+      },
+      "examples": [
+        {
+          "title": "Error-Response:",
+          "content": "HTTP/1.1 404 Not Found\n{\n\"status\":\"ERROR\",\n\"result\":\n {\n },\n\"error\":'EmailNotFound'\n}",
+          "type": "json"
+        }
+      ]
+    },
+    "filename": "resources/API/api.js",
+    "groupTitle": "User"
+  },
+  {
+    "type": "post",
+    "url": "/userLogin/",
+    "title": "User Login",
+    "version": "0.0.1",
+    "name": "UserLogin",
+    "group": "User",
+    "parameter": {
+      "fields": {
+        "Parameter": [
+          {
+            "group": "Parameter",
+            "type": "<p>String</p> ",
+            "optional": false,
+            "field": "email",
+            "description": "<p>Users unique EMAIL.</p> "
+          },
+          {
+            "group": "Parameter",
+            "type": "<p>String</p> ",
+            "optional": false,
+            "field": "password",
+            "description": "<p>Users PASSWORD.</p> "
+          },
+          {
+            "group": "Parameter",
+            "type": "<p>String</p> ",
+            "optional": false,
+            "field": "api_key",
+            "description": "<p>API key.</p> "
+          },
+          {
+            "group": "Parameter",
+            "type": "<p>String</p> ",
+            "optional": false,
+            "field": "device_id",
+            "description": "<p>Device unique Identification.</p> "
+          },
+          {
+            "group": "Parameter",
+            "type": "<p>String</p> ",
+            "optional": false,
+            "field": "device_type",
+            "description": "<p>Device type.</p> "
+          },
+          {
+            "group": "Parameter",
+            "type": "<p>String</p> ",
+            "optional": false,
+            "field": "device_push_token",
+            "description": "<p>Device push notification token.</p> "
+          }
+        ]
+      }
+    },
+    "success": {
+      "fields": {
+        "Success 200": [
+          {
+            "group": "Success 200",
+            "type": "<p>Number</p> ",
+            "optional": false,
+            "field": "id",
+            "description": "<p>User Id of the User.</p> "
+          },
+          {
+            "group": "Success 200",
+            "type": "<p>String</p> ",
+            "optional": false,
+            "field": "username",
+            "description": "<p>Username of the User.</p> "
+          },
+          {
+            "group": "Success 200",
+            "type": "<p>String</p> ",
+            "optional": false,
+            "field": "email",
+            "description": "<p>Email of the User.</p> "
+          },
+          {
+            "group": "Success 200",
+            "type": "<p>String</p> ",
+            "optional": false,
+            "field": "first_time_use",
+            "description": "<p>First time user indicator.</p> "
+          },
+          {
+            "group": "Success 200",
+            "type": "<p>String</p> ",
+            "optional": false,
+            "field": "token",
+            "description": "<p>Access Token of the User.</p> "
+          },
+          {
+            "group": "Success 200",
+            "type": "<p>Array</p> ",
+            "optional": false,
+            "field": "Category",
+            "description": "<p>Categories of the User.</p> "
+          },
+          {
+            "group": "Success 200",
+            "type": "<p>Number</p> ",
+            "optional": false,
+            "field": "inAppPurchase",
+            "description": "<p>In-app purchase status.</p> "
+          }
+        ]
+      },
+      "examples": [
+        {
+          "title": "Success-Response:",
+          "content": "HTTP/1.1 200 OK\n{\n\"status\":\"SUCCESS\",\n\"result\":\n {\n     \"id\":\"1\",\n     \"username\": \"John\",\n     \"email\": \"john@gmail.com\",\n     \"first_time_use\":\"1\"\n     \"token\":\"TMFljslIgoDitqmgfGFfhBXF8NvgRdrW9\",\n     \"photo\": \"http:\\/\\/www.cliquenet.com\\/profile.jpg\",\n     \"inAppPurchase\": 1,\n     \"categories\":[\n         {\n             \"id\": 1,\n             \"name\": \"MAIN CLIQUE\",\n             \"editable\": 0,\n             \"order\": 1,\n             \"already_edited\": 0\n         },\n         {\n             \"id\": 2,\n             \"name\": \"2nd CLIQUE\",\n             \"editable\": 1,\n             \"order\": 2,\n             \"already_edited\": 1\n         },\n     ]\n },\n \"error\":''\n}",
+          "type": "json"
+        }
+      ]
+    },
+    "error": {
+      "fields": {
+        "Error 4xx": [
+          {
+            "group": "Error 4xx",
+            "optional": false,
+            "field": "InvalidLogin",
+            "description": "<p>The email or password of the User was invalid.</p> "
+          },
+          {
+            "group": "Error 4xx",
+            "optional": false,
+            "field": "InvalidApiKey",
+            "description": "<p>The app api key was invalid.</p> "
+          }
+        ]
+      },
+      "examples": [
+        {
+          "title": "Error-Response:",
+          "content": "HTTP/1.1 401 Unauthorized\n{\n\"status\":\"ERROR\",\n\"result\":\n {\n },\n\"error\":'InvalidAPIKey'\n}",
+          "type": "json"
+        }
+      ]
+    },
+    "filename": "resources/API/api.js",
+    "groupTitle": "User"
+  },
+  {
+    "type": "post",
+    "url": "/userLogout/",
+    "title": "User Logout",
+    "version": "0.0.1",
+    "name": "UserLogout",
+    "group": "User",
+    "parameter": {
+      "fields": {
+        "Parameter": [
+          {
+            "group": "Parameter",
+            "type": "<p>String</p> ",
+            "optional": false,
+            "field": "token",
+            "description": "<p>Users ACCESS TOKEN.</p> "
+          },
+          {
+            "group": "Parameter",
+            "type": "<p>String</p> ",
+            "optional": false,
+            "field": "api_key",
+            "description": "<p>API key.</p> "
+          }
+        ]
+      }
+    },
+    "success": {
+      "examples": [
+        {
+          "title": "Success-Response:",
+          "content": "HTTP/1.1 200 OK\n{\n\"status\":\"SUCCESS\",\n\"result\":\n {\n },\n \"error\":''\n}",
+          "type": "json"
+        }
+      ]
+    },
+    "error": {
+      "fields": {
+        "Error 4xx": [
+          {
+            "group": "Error 4xx",
+            "optional": false,
+            "field": "InvalidAccessToken",
+            "description": "<p>The access token was invalid.</p> "
+          },
+          {
+            "group": "Error 4xx",
+            "optional": false,
+            "field": "InvalidAPIKey",
+            "description": "<p>The app api key was invalid.</p> "
+          }
+        ]
+      },
+      "examples": [
+        {
+          "title": "Error-Response:",
+          "content": "HTTP/1.1 401 Unauthorized\n{\n\"status\":\"ERROR\",\n\"result\":\n {\n },\n\"error\":'InvalidAccessToken'\n}",
+          "type": "json"
+        }
+      ]
+    },
+    "filename": "resources/API/api.js",
+    "groupTitle": "User"
+  },
+  {
+    "type": "post",
+    "url": "/userProfile",
+    "title": "User Profile",
+    "version": "0.0.1",
+    "name": "UserProfile",
+    "group": "User",
+    "parameter": {
+      "fields": {
+        "Parameter": [
+          {
+            "group": "Parameter",
+            "type": "<p>String</p> ",
+            "optional": false,
+            "field": "token",
+            "description": "<p>Users ACCESS TOKEN.</p> "
+          },
+          {
+            "group": "Parameter",
+            "type": "<p>String</p> ",
+            "optional": false,
+            "field": "api_key",
+            "description": "<p>API key.</p> "
+          }
+        ]
+      }
+    },
+    "success": {
+      "fields": {
+        "Success 200": [
+          {
+            "group": "Success 200",
+            "type": "<p>Number</p> ",
+            "optional": false,
+            "field": "profile_id",
+            "description": "<p>User Id of the User.</p> "
+          },
+          {
+            "group": "Success 200",
+            "type": "<p>String</p> ",
+            "optional": false,
+            "field": "username",
+            "description": "<p>Username of the User.</p> "
+          },
+          {
+            "group": "Success 200",
+            "type": "<p>String</p> ",
+            "optional": false,
+            "field": "email",
+            "description": "<p>Email of the User.</p> "
+          },
+          {
+            "group": "Success 200",
+            "type": "<p>String</p> ",
+            "optional": false,
+            "field": "profile_name",
+            "description": "<p>Full name of the User.</p> "
+          },
+          {
+            "group": "Success 200",
+            "type": "<p>String</p> ",
+            "optional": false,
+            "field": "picture",
+            "description": "<p>Photo of the User.</p> "
+          },
+          {
+            "group": "Success 200",
+            "type": "<p>Array</p> ",
+            "optional": false,
+            "field": "posts",
+            "description": "<p>Posts of the User.</p> "
+          }
+        ]
+      },
+      "examples": [
+        {
+          "title": "Success-Response:",
+          "content": "HTTP/1.1 200 OK\n{\n\"status\":\"SUCCESS\",\n\"result\":\n      {\n      \"profile_id\": 2\n      \"profile_name\": \"John David\",\n      \"picture\": \"http:\\/\\/www.cliquenet.com\\/profile.jpg\",\n      \"username\": \"john\"\n      \"posts\":[{\n         \"post_id\": 1,\n         \"description\": \"Lorem ipsum dolor sit amet, consectetur adipiscing elit.\",\n         \"date\": \"2016-02-24 10:30:00\",\n         \"media\": [\n             {\n                 \"id\": 1,\n                 \"photo\": \"http:\\/\\/www.cliquenet.com\\/photo.jpg\",\n                 \"video\": \"\",\n                 \"preview: \"\",\n                 \"text\": \"\",\n                 \"link\": \"\",\n                 \"type\": \"PHOTO\",\n                 \"order\": 1\n             }\n         ],\n      }]\n      }\n \"error\":''\n}",
+          "type": "json"
+        }
+      ]
+    },
+    "error": {
+      "fields": {
+        "Error 4xx": [
+          {
+            "group": "Error 4xx",
+            "optional": false,
+            "field": "InvalidAccessToken",
+            "description": "<p>The access token was invalid.</p> "
+          },
+          {
+            "group": "Error 4xx",
+            "optional": false,
+            "field": "InvalidAPIKey",
+            "description": "<p>The app api key was invalid.</p> "
+          }
+        ]
+      },
+      "examples": [
+        {
+          "title": "Error-Response:",
+          "content": "HTTP/1.1 401 Unauthorized\n{\n\"status\":\"ERROR\",\n\"result\":\n {\n },\n\"error\":'InvalidAccessToken'\n}",
+          "type": "json"
+        }
+      ]
+    },
+    "filename": "resources/API/api.js",
+    "groupTitle": "User"
+  },
+  {
+    "type": "post",
+    "url": "/userRegister/",
+    "title": "User Registration",
+    "version": "0.0.1",
+    "name": "UserRegister",
+    "group": "User",
+    "parameter": {
+      "fields": {
+        "Parameter": [
+          {
+            "group": "Parameter",
+            "type": "<p>String</p> ",
+            "optional": false,
+            "field": "fullname",
+            "description": "<p>Users FULLNAME.</p> "
+          },
+          {
+            "group": "Parameter",
+            "type": "<p>String</p> ",
+            "optional": false,
+            "field": "email",
+            "description": "<p>Users unique EMAIL.</p> "
+          },
+          {
+            "group": "Parameter",
+            "type": "<p>String</p> ",
+            "optional": false,
+            "field": "username",
+            "description": "<p>Users unique USERNAME.</p> "
+          },
+          {
+            "group": "Parameter",
+            "type": "<p>String</p> ",
+            "optional": false,
+            "field": "password",
+            "description": "<p>Users PASSWORD.</p> "
+          },
+          {
+            "group": "Parameter",
+            "type": "<p>String</p> ",
+            "optional": false,
+            "field": "api_key",
+            "description": "<p>API key.</p> "
+          },
+          {
+            "group": "Parameter",
+            "type": "<p>String</p> ",
+            "optional": false,
+            "field": "device_id",
+            "description": "<p>Device unique Identification.</p> "
+          },
+          {
+            "group": "Parameter",
+            "type": "<p>String</p> ",
+            "optional": false,
+            "field": "device_type",
+            "description": "<p>Device type.</p> "
+          },
+          {
+            "group": "Parameter",
+            "type": "<p>String</p> ",
+            "optional": false,
+            "field": "device_push_token",
+            "description": "<p>Device push notification token.</p> "
+          },
+          {
+            "group": "Parameter",
+            "type": "<p>String</p> ",
+            "optional": false,
+            "field": "photo",
+            "description": "<p>User profile picture.</p> "
+          }
+        ]
+      }
+    },
+    "success": {
+      "fields": {
+        "Success 200": [
+          {
+            "group": "Success 200",
+            "type": "<p>Number</p> ",
+            "optional": false,
+            "field": "id",
+            "description": "<p>User Id of the User.</p> "
+          },
+          {
+            "group": "Success 200",
+            "type": "<p>String</p> ",
+            "optional": false,
+            "field": "username",
+            "description": "<p>Username of the User.</p> "
+          },
+          {
+            "group": "Success 200",
+            "type": "<p>String</p> ",
+            "optional": false,
+            "field": "email",
+            "description": "<p>Email of the User.</p> "
+          },
+          {
+            "group": "Success 200",
+            "type": "<p>String</p> ",
+            "optional": false,
+            "field": "first_time_use",
+            "description": "<p>First time user indicator.</p> "
+          },
+          {
+            "group": "Success 200",
+            "type": "<p>String</p> ",
+            "optional": false,
+            "field": "token",
+            "description": "<p>Access Token of the User.</p> "
+          },
+          {
+            "group": "Success 200",
+            "type": "<p>Array</p> ",
+            "optional": false,
+            "field": "Category",
+            "description": "<p>Categories of the User.</p> "
+          },
+          {
+            "group": "Success 200",
+            "type": "<p>Number</p> ",
+            "optional": false,
+            "field": "inAppPurchase",
+            "description": "<p>In-app purchase status.</p> "
+          }
+        ]
+      },
+      "examples": [
+        {
+          "title": "Success-Response:",
+          "content": "HTTP/1.1 200 OK\n{\n\"status\":\"SUCCESS\",\n\"result\":\n {\n     \"id\": \"1\",\n     \"username\": \"John\",\n     \"email\": \"john@gmail.com\",\n     \"first_time_use\":\"1\"\n     \"token\":\"TMFljslIgoDitqmgfGFfhBXF8NvgRdrW9\",\n     \"photo\": \"http:\\/\\/www.cliquenet.com\\/profile.jpg\",\n     \"inAppPurchase\": 1,\n     \"categories\":[\n         {\n             \"id\": 1,\n             \"name\": \"MAIN CLIQUE\",\n             \"editable\": 0,\n             \"order\": 1,\n             \"already_edited\": 0\n         },\n         {\n             \"id\": 2,\n             \"name\": \"2nd CLIQUE\",\n             \"editable\": 1,\n             \"order\": 2,\n             \"already_edited\": 0\n         },\n     ]\n },\n \"error\":''\n}",
+          "type": "json"
+        }
+      ]
+    },
+    "error": {
+      "fields": {
+        "Error 4xx": [
+          {
+            "group": "Error 4xx",
+            "optional": false,
+            "field": "EmailAlreadyExist",
+            "description": "<p>The email of the User is already exist.</p> "
+          },
+          {
+            "group": "Error 4xx",
+            "optional": false,
+            "field": "InvalidAPIKey",
+            "description": "<p>The app api key was invalid.</p> "
+          }
+        ]
+      },
+      "examples": [
+        {
+          "title": "Error-Response:",
+          "content": "HTTP/1.1 400 Bad Request\n{\n\"status\":\"ERROR\",\n\"result\":\n {\n },\n\"error\":'EmailAlreadyExist'\n}",
+          "type": "json"
+        }
+      ]
+    },
+    "filename": "resources/API/api.js",
+    "groupTitle": "User"
+  }
+]
